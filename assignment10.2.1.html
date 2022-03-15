@@ -287,6 +287,7 @@
 
                 <fieldset id="submitButton">
                     <button type="submit" id="submit">Submit</button>
+                    <button type="reset">Clear Form</button>
                     <button type="button" id="popData">Fill with Dummy Data</button>
                 </fieldset>
 
@@ -332,15 +333,14 @@
                         case "password1":
                             const passreg = /^[A-Za-z]\w{5,14}$/;
                             if (!container.value.match(passreg)) {
-                                alert("Password must be between 6 to 14 characters which contain only characters, numeric digits, underscore, and first character must be a letter.");
+                                alert("Password must between 6 to 14 characters which contain only characters, numeric digits, underscore, and first character must be a letter.");
                                 _id(`${container.id}-label`).classList.add("label-error");
                                 return;
-                              
+                                
                             }else if (container.value != _id("password2").value){
                                 alert("Password does not match");
                                 _id(`${container.id}-label`).classList.add("label-error");
                                 return;
-                              
                             }
                             break;
                     }
@@ -350,7 +350,6 @@
 
             _id("myform").addEventListener("submit", e => FormSubmitEvent(e));
             _id("popData").addEventListener("click", PopulateForm);
-          
             PopulateForm();
         });
     </script>
