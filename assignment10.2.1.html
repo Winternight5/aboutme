@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 10.2.1</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat');
+        @import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
+        @import url('https://fonts.googleapis.com/css?family=Parisienne');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: hsl(210, 95%, 77%);
+            background-image: linear-gradient(62deg, hsl(210, 95%, 77%) 0%, hsl(271, 90%, 88%) 100%);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        header {
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 7vw;
+            color: hsl(0, 0%, 20%);
+            font-family: "Parisienne";
+            text-shadow: 1px 1px 2px hsl(0, 0%, 20%);
+        }
+
+        .title-number {
+            display: block;
+            position: absolute;
+            margin-top: 2%;
+            margin-left: 30%;
+            margin-right: 30%;
+            width: 40%;
+            font-size: 14vw;
+            color: hsl(71, 33%, 87%);
+            z-index: -1;
+            bottom: 20px;
+            left: 9px;
+            font-family: "Berkshire Swash";
+            text-shadow: 1px 1px 5px hsl(190, 100%, 35%);
+        }
+
+        main {
+            width: 65%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 15%;
+            margin-top: -2%;
+            background-color: hsla(330, 40%, 100%, .3);
+            padding: 10px;
+            font-family: 'Montserrat', sans-serif;
+            padding-bottom: 5%;
+        }
+
+        #description {
+            text-align: center;
+            font-size: 1.65vw;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        form {
+            width: 80%;
+            margin: auto;
+            font-size: 12pt;
+            border: solid 10px hsla(186, 100%, 50%, 0.2);
+            background-color: hsla(0, 100%, 100%, .5);
+            box-shadow: 2px 2px 7px hsla(0, 0%, 0%, .1);
+        }
+
+        fieldset {
+            padding: 5%;
+            border: none;
+        }
+
+        fieldset:nth-child(odd) {
+            background-color: hsla(0, 0%, 70%, .1);
+        }
+
+        label,
+        input,
+        select,
+        textarea,
+        button {
+            padding: 1%;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="password"],
+        textarea {
+            background-color: hsla(283, 100%, 100%, .5);
+            height: 25px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 98%;
+        }
+
+        input[type="number"],
+        input[type="date"] {
+            width: 50%;
+        }
+
+        select {
+            height: 40px;
+            background-color: hsla(283, 100%, 99%, .5);
+        }
+
+        .check>label {
+            margin-left: 5px;
+        }
+
+        .check>input {
+            display: block;
+            float: left;
+            margin-left: 15px;
+        }
+
+        .label-error {
+            color: red;
+            font-weight: 700;
+        }
+
+        textarea {
+            width: 98%;
+            height: 25vh;
+            border: solid 1px hsla(0, 0%, 0%, .1);
+        }
+
+        #submitButton {
+            text-align: center;
+        }
+
+        button {
+            font-family: 'Montserrat';
+            font-size: 1.5em;
+            background-color: hsla(190, 100%, 75%, .7);
+            border: solid 10px hsla(186, 100%, 50%, 0.2);
+        }
+
+        button:hover {
+            background-color: hsla(190, 100%, 93%, .9);
+            border: solid 10px hsla(186, 100%, 50%, 0.8);
+        }
+
+        button:active {
+            background-color: hsl(190, 100%, 85%);
+            outline: 2px outset hsla(186, 100%, 50%, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+        <header>
+            <h1 id="title"><span class="title-number">10.2.1</span>Assignment</h1>
+        </header>
+
+        <main>
+            <p id="description">
+                Design a registration form having minimum 10 fields. Apply validations using HTML5 attributes and using
+                javascript.
+            </p>
+
+            <form id="myform">
+
+                <fieldset>
+                    <label for="fname" id="fname-label">1. *First Name: </label>
+                    <input type="text" id="fname" placeholder="input first name here" class="validate" required>
+                </fieldset>
+
+                <fieldset>
+                    <label for="lname" id="lname-label">2. *Last Name: </label>
+                    <input type="text" id="lname" placeholder="input last name here" class="validate" required>
+                </fieldset>
+
+                <fieldset>
+                    <label for="email" id="email-label">3. *Email: </label>
+                    <input type="email" id="email" placeholder="input email here" class="validate" required>
+                </fieldset>
+
+                <fieldset>
+                    <label for="password1" id="password1-label">4. *password:</label>
+                    <input type="password" id="password1" minlength="6" maxlength="14" placeholder="input password here"
+                        class="validate" required>
+                        <br><i>password between 6 to 14 characters
+                            which contain only characters, numeric digits, underscore and first character must be a
+                            letter</i>
+                </fieldset>
+
+                <fieldset>
+                    <label for="password2" id="password2-label">4. *repeat password: </label>
+                    <input type="password" id="password2" minlength="6" maxlength="14" placeholder="input password here"
+                        class="validate" required>
+                </fieldset>
+
+                <fieldset>
+                    <label for="number" id="number-label">5. *What's your lucky number? (0-99):</label>
+                    <input type="number" id="number" min="0" max="99" placeholder="input number here" class="validate"
+                        required>
+                </fieldset>
+
+                <fieldset>
+                    <label for="dropdown">6. What's your favorite music genre?:</label>
+                    <select id="dropdown" size="1">
+                        <option disabled selected>Select&hellip;</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <label>7. Do you know your Zodiac sign?:
+                        <label for="radio1" id="radio1-label">Yes</label>
+                        <input type="radio" id="radio1" value="1" name="radioGroup">
+
+                        <label for="radio2" id="radio2-label">No</label>
+                        <input type="radio" id="radio2" value="0" name="radioGroup">
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <label for="dob" id="dob-label">8. *Your date of birth: </label>
+                    <input type="date" id="dob" class="validate" placeholder="input date of birth here" required>
+                </fieldset>
+
+                <fieldset>
+                    <label for="ssn" id="ssn-label">9. *Your Social Security Number: </label>
+                    <input type="number" id="ssn" min="100000000" max="999999999" class="validate"
+                        placeholder="input Social Security Number here" required>
+                </fieldset>
+
+                <fieldset>
+                    <label class="check">10. What's your favorite food? (Check 1 or many):
+                        <br />
+                        <br />
+                        <label for="checkbox9" id="checkbox9-label">Dairy</label>
+                        <input type="checkbox" id="checkbox9" value="dairy" name="checkboxGroup">
+                        <br />
+                        <br />
+                        <label for="checkbox6" id="checkbox6-label">Fish</label>
+                        <input type="checkbox" id="checkbox6" value="fish" name="checkboxGroup">
+                        <br />
+                        <br />
+                        <label for="checkbox2" id="checkbox2-label">Fruit</label>
+                        <input type="checkbox" id="checkbox2" value="fruit" name="checkboxGroup">
+                        <br />
+                        <br />
+                        <label for="checkbox4" id="checkbox4-label">Mushrooms</label>
+                        <input type="checkbox" id="checkbox4" value="mushrooms" name="checkboxGroup">
+                        <br />
+                        <br />
+                        <label for="checkbox3" id="checkbox3-label">Nuts and Seeds</label>
+                        <input type="checkbox" id="checkbox3" value="nuts-seeds" name="checkboxGroup">
+                        <br />
+                        <br />
+                        <label for="checkbox7" id="checkbox7-label">Poultry</label>
+                        <input type="checkbox" id="checkbox7" value="poultry" name="checkboxGroup">
+                        <br />
+                        <br />
+                        <label for="checkbox8" id="checkbox8-label">Red Meat</label>
+                        <input type="checkbox" id="checkbox8" value="red-meat" name="checkboxGroup">
+                        <br />
+                        <br />
+                        <label for="checkbox1" id="checkbox1-label">Veggies</label>
+                        <input type="checkbox" id="checkbox1" value="veggies" name="checkboxGroup">
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <label for="textarea" id="checkbox9-label">11. Any comment? </label>
+                    <textarea id="textarea"
+                        placeholder="Bank account information, usernames, passwords, mother maiden name, etc..."></textarea>
+                </fieldset>
+
+                <fieldset id="submitButton">
+                    <button type="submit" id="submit">Submit</button>
+                    <button type="button" id="popData">Fill with Dummy Data</button>
+                </fieldset>
+
+            </form>
+        </main>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const _id = (name) => document.getElementById(name);
+            const musicGenres = ["Blue", "Classical", "Country", "Electronic", "Heavy Metal", "Hip Hop", "Jazz", "KPop", "Pop", "Punk", "Rock"];
+            const dummyData = {
+                "fname": "John",
+                "lname": "Doe",
+                "email": "john.doe@test@.com",
+                "password1": "ntfd",
+                "password2": "fdgf_5e6",
+                "number": "10",
+                "dob": "2010-10-10",
+                "ssn": "123456789",
+            }
+
+            for (let i = 0; i < musicGenres.length; i++) {
+                let opt = document.createElement('option');
+                opt.value = i;
+                opt.innerHTML = musicGenres[i];
+                _id("dropdown").appendChild(opt);
+            }
+
+            const PopulateForm = () => {
+                document.querySelectorAll('.validate').forEach(function (container) {
+                    if (dummyData[container.id])
+                        container.value = dummyData[container.id];
+                });
+            }
+
+            const FormSubmitEvent = (e) => {
+                document.querySelectorAll('label').forEach(function (container) {
+                    container.classList.remove('label-error');
+                });
+
+                document.querySelectorAll('.validate').forEach(function (container) {
+                    switch (container.id) {
+                        case "password1":
+                            const passreg = /^[A-Za-z]\w{5,14}$/;
+                            if (!container.value.match(passreg)) {
+                                alert("Password must be between 6 to 14 characters which contain only characters, numeric digits, underscore, and first character must be a letter.");
+                                _id(`${container.id}-label`).classList.add("label-error");
+                                return;
+                              
+                            }else if (container.value != _id("password2").value){
+                                alert("Password does not match");
+                                _id(`${container.id}-label`).classList.add("label-error");
+                                return;
+                              
+                            }
+                            break;
+                    }
+                });
+                e.preventDefault();
+            }
+
+            _id("myform").addEventListener("submit", e => FormSubmitEvent(e));
+            _id("popData").addEventListener("click", PopulateForm);
+          
+            PopulateForm();
+        });
+    </script>
+</body>
+
+</html>
