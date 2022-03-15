@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 10.2</title>
+    <style>
+        body {
+            font-family: 'Fira Sans', sans-serif;
+            background: #333;
+        }
+
+        fieldset {
+            vertical-align: middle;
+            border-radius: 10px;
+            border: 0;
+        }
+
+        legend {
+            width: 95%;
+            background-color: #666;
+            color: #fff;
+            padding: 3px 6px;
+            border-radius: 10px;
+            border: 1px solid white;
+        }
+
+        .output {
+            padding: 5px;
+            display: inline-block;
+            font-size: large;
+        }
+
+        input {
+            padding: 8px 0px 8px 0px;
+            font-size: 1.5rem;
+            border-radius: 10px;
+        }
+
+        input[type="button"] {
+            min-width: 60px;
+            padding: 10px 15px 10px 15px;
+            background: rgb(250, 250, 250);
+            background: linear-gradient(184deg, rgba(250, 250, 250, 1) 50%, rgba(154, 154, 154, 1) 100%);
+        }
+
+        .main-list li {
+            color: aliceblue;
+            margin: 20px;
+            border-radius: 15px;
+        }
+
+        .pretty-bg:nth-of-type(1) {
+            background-color: #8BC6EC;
+            background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+        }
+
+        .pretty-bg:nth-of-type(2) {
+            background-color: #85FFBD;
+            background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+        }
+
+        .pretty-bg:nth-of-type(3) {
+            background-color: #3EECAC;
+            background-image: linear-gradient(19deg, #3EECAC 0%, #EE74E1 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <ol class="main-list">
+        <li class="pretty-bg">
+            <fieldset>
+                <legend>
+                    Write inline javascript functions to perform simple arithmetic functions like add, subtract,
+                    multiply and divide. Provide 2 input boxes to enter 2 numbers. Search these input boxes by using DOM
+                    and then perform the calculations. 4 buttons can be used to invoke the functions.
+                </legend>
+                <input type="number" id="input1">
+                <input type="number" id="input2">
+                <input type="button" value="+" id="btnAdd" class="listenEvent">
+                <input type="button" value="-" id="btnSubstract" class="listenEvent">
+                <input type="button" value="×" id="btnMultiply" class="listenEvent">
+                <input type="button" value="÷" id="btnDivide" class="listenEvent">
+                =
+                <div id="result" class="output">0</div>
+            </fieldset>
+        </li>
+        <li class="pretty-bg">
+            <fieldset>
+                <legend>
+                    Design a simple form to allow users to enter their hobby. If user clicks on “add more hobby” add
+                    more text box control dynamically using DOM.
+                </legend>
+                <ul id="hobbyList">
+                    <li><input type="text"></li>
+                    <li><input type="text"></li>
+                </ul>
+                <input type="button" value="Add more hobby" id="btnAddHobby" class="listenEvent">
+            </fieldset>
+        </li>
+        <li class="pretty-bg">
+            <fieldset>
+                <legend>
+                    Declare arrays of string. Enter user defined data into it and perform basic operations on array.
+                </legend>
+                <ul id="arrayList">
+                </ul>
+                <input type="text" id="input3">
+                <input type="button" value="Add To Array" id="btnAddArray" class="listenEvent">
+                <input type="button" value="View in Console Log" id="btnViewArray" class="listenEvent">
+            </fieldset>
+        </li>
+    </ol>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            let globalArray = [];
+
+            const _id = (name) => document.getElementById(name);
+
+            document.querySelectorAll('.listenEvent').forEach(function (container) {
+                container.addEventListener("click", e => BasicMath(e.target.id))
+            });
+
+            const BasicMath = (type) => {
+                switch (type) {
+                    case "btnAdd":
+                        _id("result").innerText = _id("input1").value + _id("input2").value;
+                        break;
+
+                    case "btnSubstract":
+                        _id("result").innerText = _id("input1").value - _id("input2").value;
+                        break;
+
+                    case "btnMultiply":
+                        _id("result").innerText = _id("input1").value * _id("input2").value;
+                        break;
+
+                    case "btnDivide":
+                        _id("result").innerText = _id("input1").value / _id("input2").value;
+                        break;
+
+                    case "btnAddHobby":
+                        addElement();
+                        break;
+
+                    case "btnAddArray":
+                        globalArray.push(_id("input3").value);
+                        DisplayArrayData();
+                        break;
+
+                    case "btnViewArray":
+                        console.log(globalArray);
+                        break;
+
+                    default:
+                        //do nothing for right now
+                        break;
+                }
+            }
+
+            const addElement = () => {
+                const input = document.createElement("input");
+                input.type = "text";
+
+                const newLi = document.createElement("li");
+                newLi.appendChild(input);
+
+                _id("hobbyList").appendChild(newLi);
+            }
+
+            const deleteArrayElement = (id) => {
+                globalArray.splice(id, 1);
+                DisplayArrayData();
+            }
+
+            const DisplayArrayData = () => {
+                _id("arrayList").innerHTML = '';
+
+                for (var i = 0; i < globalArray.length; i++) {
+                    var div = document.createElement("li");
+                    div.innerHTML = `${globalArray[i]} <b onclick="deleteArrayElement(${i})">[ X ]</b>`;
+
+                    _id("arrayList").appendChild(div);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
