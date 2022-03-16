@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans" rel="stylesheet">
     <title>Tai Huynh</title>
     <style>
+        @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
         body {
             font-family: "Open Sans";
             /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,f1f1f1+50,e1e1e1+51,f6f6f6+100;White+Gloss+%231 */
@@ -20,6 +22,7 @@
             background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%);
             /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6', GradientType=1);
+            background-attachment: fixed;
         }
 
         img {
@@ -109,7 +112,7 @@
         }
 
         .page {
-            max-width: 980px;
+            max-width: 900px;
             padding: 0 20px;
             margin: 75px auto 0
         }
@@ -131,6 +134,15 @@
             top: 6px;
             left: 6px;
             display: block;
+        }
+
+        .fa {
+            font-size: xx-large;
+            padding: 0px 20px 0px 20px;
+        }
+
+        .center {
+            text-align: center;
         }
     </style>
 </head>
@@ -274,6 +286,9 @@
 
     <section id="video" class="page">
         <h2 class="subtitle">Learn to Code</h2>
+        <p>
+            A short video about learning to code.
+        </p>
         <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/NtfbWkxJTHw"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -282,8 +297,11 @@
 
     <section id="contact" class="page">
         <h2 class="subtitle">Contact</h2>
-        <p>Linkedin: <a href="https://www.linkedin.com/in/tai-huynh5/" target="_new">@tai-huynh5</a></p>
-        <p>Github: <a href="https://github.com/Winternight5" target="_new">@Winternight5</a></p>
+
+        <p class="center">
+            <a href="https://www.linkedin.com/in/tai-huynh5/" target="_new"><i class="fa fa-linkedin"></i></a>
+            <a href="https://github.com/Winternight5" target="_new"><i class="fa fa-github"></i></a>
+        </p>
     </section>
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
@@ -296,9 +314,9 @@
                     _id("geolocation").innerHTML = "Geolocation is not supported by this browser.";
             }
 
-            const showPosition = (position) => 
+            const showPosition = (position) =>
                 _id("geolocation").innerHTML = `Your Location: <a href="https://www.google.com/maps/@${position.coords.latitude},${position.coords.longitude},20z" target="_new">${position.coords.latitude.toFixed(3)}, ${position.coords.longitude.toFixed(3)}</a>`;
-            
+
 
             const showError = (error) => {
                 let txt = "";
