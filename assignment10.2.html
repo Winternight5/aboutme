@@ -125,21 +125,24 @@
             });
 
             const BasicMath = (type) => {
+                const v1 = parseFloat(_id("input1").value);
+                const v2 = parseFloat(_id("input2").value);
+
                 switch (type) {
                     case "btnAdd":
-                        _id("result").innerText = _id("input1").value + _id("input2").value;
+                        _id("result").innerText = v1 + v2;
                         break;
 
                     case "btnSubstract":
-                        _id("result").innerText = _id("input1").value - _id("input2").value;
+                        _id("result").innerText = v1 - v2;
                         break;
 
                     case "btnMultiply":
-                        _id("result").innerText = _id("input1").value * _id("input2").value;
+                        _id("result").innerText = v1 * v2;
                         break;
 
                     case "btnDivide":
-                        _id("result").innerText = _id("input1").value / _id("input2").value;
+                        _id("result").innerText = v1 / v2;
                         break;
 
                     case "btnAddHobby":
