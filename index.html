@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans" rel="stylesheet">
     <title>Tai Huynh</title>
     <style>
@@ -27,7 +27,7 @@
 
         img {
             max-width: 100%;
-            height: auto
+            height: auto;
         }
 
         audio {
@@ -50,7 +50,7 @@
         }
 
         .float-date {
-            float: right
+            float: right;
         }
 
         .subtitle,
@@ -72,7 +72,7 @@
             width: 350px;
             margin-right: 1.5em;
             display: block;
-            border-radius: 100px
+            border-radius: 100px;
         }
 
         .grayscale {
@@ -98,7 +98,7 @@
             text-transform: uppercase;
             font-size: large;
             padding-bottom: 1vh;
-            list-style-type: none
+            list-style-type: none;
         }
 
         .main-nav li a {
@@ -114,7 +114,7 @@
         .page {
             max-width: 900px;
             padding: 0 20px;
-            margin: 75px auto 0
+            margin: 75px auto 0;
         }
 
         .page a {
@@ -155,6 +155,43 @@
             text-decoration: none;
         }
 
+        /*
+            Modify existing website to have adaptive user interface.
+        */
+        @media (max-width: 1400px) {
+            .profile-img {
+                float: none;
+                margin: 0 auto;
+                width: 600px;
+            }
+
+            .about-me {
+                margin: 0 auto;
+            }
+
+            .main-nav {
+                position: static;
+                display: block;
+            }
+
+            .main-nav li {
+                display: inline-block;
+            }
+
+            #geolocation {
+                display: none;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .float-date {
+                float:inline-start;
+            }
+        }
+
+        /*
+            Modify the about us page to print it without graphics and multimedia.
+        */
         @media print {
             .no-print {
                 display: none !important;
