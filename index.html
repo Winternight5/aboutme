@@ -125,8 +125,13 @@
             padding-bottom: 12px
         }
 
+        .page p {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
         .about-me {
-            margin: 20px 0 0
+            margin: 20px 0 0;
         }
 
         #geolocation {
@@ -143,6 +148,25 @@
 
         .center {
             text-align: center;
+        }
+
+        .show-print {
+            display: none;
+            text-decoration: none;
+        }
+
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .show-print {
+                display: block;
+            }
+
+            * {
+                background-image: none !important;
+            }
         }
     </style>
 </head>
@@ -167,9 +191,9 @@
     <h1 class="title" id="title">Tai Huynh</h1>
     <span class="tagline">Software Engineer</span>
 
-    <div id="geolocation">Your Location</div>
+    <div id="geolocation" class="no-print">Your Location</div>
 
-    <nav class="main-nav">
+    <nav class="main-nav no-print">
         <ul>
             <li><a href="#title">About</a></li>
             <li><a href="#education">Education</a></li>
@@ -179,12 +203,12 @@
         </ul>
     </nav>
 
-    <audio autoplay src="Reaching_Out_David_Renda.mp3" controls>
+    <audio autoplay src="Reaching_Out_David_Renda.mp3" class="no-print" controls>
         <p>Your browser does not support the audio element.</p>
     </audio>
 
     <section id="about" class="page default">
-        <img class="profile-img grayscale"
+        <img class="profile-img grayscale no-print"
             src="https://media-exp1.licdn.com/dms/image/D5603AQEQIAJx5nMk1w/profile-displayphoto-shrink_800_800/0/1645174864630?e=1652918400&v=beta&t=XtZfxyUXE7TwFzrIeZ1JnMTa3qRjwroFBwMpQyktEgc" />
         <div class="about-me">
             <p>Software programming has been my interest since I was a kid. I recall sitting in front of a Windows 98
@@ -234,8 +258,9 @@
     <section id="workexperience" class="page">
         <h2 class="subtitle">Work Experience</h2>
         <p>
-            <b>Cloud Application Development Student</b>, <i>Microsoft Software and Systems Academy (MSSA)</i>
+            <b>Cloud Application Development Student</b>
             <b class="float-date">Jan 2022 - Present</b>
+            <br><i>Microsoft Software and Systems Academy (MSSA)</i>
         </p>
         <p>
         <ul>
@@ -252,8 +277,9 @@
         </ul>
         </p>
         <p>
-            <b>Product Design Intern</b>, <i>Naval Postgraduate School, Monterey, California</i>
+            <b>Product Design Intern</b>
             <b class="float-date">Apr 2020 – Dec 2021</b>
+            <br><i>Naval Postgraduate School, Monterey, California</i>
         </p>
         <p>
         <ul>
@@ -266,8 +292,9 @@
         </ul>
         </p>
         <p>
-            <b>Human Resources Manager</b>, <i> U.S. Army (Active Duty)</i>
+            <b>Human Resources Manager</b>
             <b class="float-date">Jul 2003 – May 2014</b>
+            <br><i> U.S. Army (Active Duty)</i>
         </p>
         <p>
         <ul>
@@ -284,7 +311,7 @@
         </p>
     </section>
 
-    <section id="video" class="page">
+    <section id="video" class="page no-print">
         <h2 class="subtitle">Learn to Code</h2>
         <p>
             A short video about learning to code.
@@ -298,11 +325,18 @@
     <section id="contact" class="page">
         <h2 class="subtitle">Contact</h2>
 
-        <p class="center">
+        <p class="center no-print">
             <a href="https://www.linkedin.com/in/tai-huynh5/" target="_new"><i class="fa fa-linkedin"></i></a>
             <a href="https://github.com/Winternight5" target="_new"><i class="fa fa-github"></i></a>
         </p>
+        <p class="center show-print">
+            <a href="https://www.linkedin.com/in/tai-huynh5/" target="_new"><i class="fa fa-linkedin"></i>
+                https://www.linkedin.com/in/tai-huynh5/</a> <br><br>
+            <a href="https://github.com/Winternight5" target="_new"><i class="fa fa-github"></i>
+                https://github.com/Winternight5</a>
+        </p>
     </section>
+    <br><br><br>
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
             const _id = (name) => document.getElementById(name);
@@ -316,7 +350,6 @@
 
             const showPosition = (position) =>
                 _id("geolocation").innerHTML = `Your Location: <a href="https://www.google.com/maps/@${position.coords.latitude},${position.coords.longitude},20z" target="_new">${position.coords.latitude.toFixed(3)}, ${position.coords.longitude.toFixed(3)}</a>`;
-
 
             const showError = (error) => {
                 let txt = "";
