@@ -363,9 +363,9 @@
                 "sale": true,
                 "review": 1,
                 "price": 19.99,
-                "sale_price": "5.0 Shipping, otherwise <u>Free</u>",
+                "sale_price": "5.0 Shipping.<br><span class='text-info'>Otherwise <u>Free!</u> Inventory must go!!!</span>",
                 "producer": "Kyle Woody",
-                
+
             },
             {
                 "name": "Nice Chair",
@@ -407,16 +407,19 @@
 
         window.addEventListener('DOMContentLoaded', (event) => {
             const _id = (name) => document.getElementById(name);
+
             const DisplayGallery = () => {
-                tmp = '';
+                let tmp = '';
+
+                shuffle(items);
 
                 for (let i = 0; i < items.length; i++) {
                     tmp += `<div class="col mb-5"><div class="card h-100">`;
 
                     if (items[i].sale)
-                        tmp += `<div class="badge bg-dark text-white position-absolute on-sale">Sale</div>`;
+                        tmp += `<div class="badge bg-danger text-white position-absolute on-sale">Sale</div>`;
 
-                    review = `<div class="d-flex justify-content-center small text-warning mb-2">`;
+                    let review = `<div class="d-flex justify-content-center small text-warning mb-2">`;
                     for (let j = 0; j < 5; j++) {
 
                         review += (j < items[i].review) ? `<div class="bi-star-fill"></div>` : `<div class="bi-star"></div>`;
@@ -431,7 +434,7 @@
                                     ${review}
 
                                     <h5>${(items[i].sale ? `<span class="text-muted text-decoration-line-through">$${items[i].price}</span>` : '')}
-                                    $${(!items[i].sale ? `${items[i].price}` : `${items[i].sale_price}`)}</h5>
+                                    <span class="text-success">$${(!items[i].sale ? `${items[i].price}` : `${items[i].sale_price}`)}</span></h5>
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -442,6 +445,19 @@
                 }
 
                 _id("Gallery").innerHTML = tmp;
+            }
+
+            const shuffle = (array) => {
+                let currentIndex = array.length, randomIndex;
+
+                while (currentIndex != 0) {
+                    randomIndex = Math.floor(Math.random() * currentIndex);
+                    currentIndex--;
+
+                    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+                }
+
+                return array;
             }
 
             DisplayGallery();
