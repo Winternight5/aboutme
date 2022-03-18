@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tai Huynh</title>
+    <style>
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css");
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap");
+
+        body {
+            font-family: "Playfair Display", Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            list-style-type: none;
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.75em;
+            padding-right: 30px;
+            font-family: AvenirLTStd-Book, Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            text-shadow:
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .nav-link:hover {
+            color: crimson !important;
+            text-decoration: none;
+        }
+
+        nav .navbar-logo {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .banner {
+            background-image: url("https://cdn.shopify.com/s/files/1/0781/0385/files/Master_2_1500x.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            height: 85vh;
+            display: flex;
+            font-family: "Playfair Display", "Helvetica", "Arial", sans-serif;
+            align-items: flex-end;
+            font-size: 64px;
+            font-weight: 800;
+            line-height: 72px;
+            padding: 60px 0 115px 25px;
+            color: #fff;
+            text-shadow:
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .banner span {
+            color: crimson;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .item1 {
+            flex-basis: 50%;
+        }
+
+        .item2 {
+            flex-basis: 50%;
+        }
+
+        .content {
+            padding: 40px;
+            text-align: center;
+            align-self: center;
+            font-size: larger;
+        }
+
+        .on-sale {
+            top: 0.5rem;
+            right: 0.5rem;
+        }
+
+        .text-decoration-line-through {
+            text-decoration: line-through;
+            color: red !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+        Assignment 10.4
+
+        Design a static website for an “Art Gallery”. Have following pages in them:
+
+            1. Home page
+            2. About Us page
+            3. Contact Us page
+            4. Sign up page to get updates ( user can register to get good deals)
+            5. Gallery page to display products ( paintings, frames) with description and price.
+    -->
+    <!--MENU-->
+    <nav id="menu" class="navbar navbar-expand-lg bg-secondary">
+        <div class="container">
+            <a href="/" class="navbar-brand">
+                <img class="navbar-logo" src="stuff/logo.png">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="#Gallery" class="nav-link active">
+                            Gallery
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#About" class="nav-link active">
+                            About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Contact" class="nav-link active">
+                            Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#SignUp" class="nav-link active" data-toggle="modal" data-target="#SignUp">
+                            Sign Up
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--BANNER-->
+    <div class="banner">
+        <p>Choose your <span>own style</span> that fit you</p>
+    </div>
+
+    <div class="container px-4 px-lg-5 mt-5">
+        <div id="Gallery" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        </div>
+    </div>
+
+    <!--Main-->
+    <div id="About" class="row">
+        <div class="item1">
+            <img src='https://cdn.shopify.com/s/files/1/0781/0385/files/LoungeRoadside-12_1024x1024.jpg?v=1592457290'>
+        </div>
+        <div class="item2 content">
+            <h1>About us</h1>
+            <br>
+            <img src="stuff/logo.png" class="img-fluid" style="max-width: 200px;">
+            <p>
+                We started as Microsoft Software and Systems Academy students in 2022, unable to pay rent, and are
+                now
+                selling furniture and homewares online because, as Veterans and technology enthusiasts, competing
+                for
+                Software Engineering positions is exceedingly difficult, and we struggled to find affordable and
+                locally
+                accessible furniture and homewares that truly reflected our own style and character.
+            </p>
+            <a href="#menu">Learn more</a>
+        </div>
+    </div>
+
+    <div id="Contact" class="row">
+        <div class="item1 content">
+            <h1>Contact Us</h1>
+            <br>
+            <p>The Smarkan Homestore is adjacent to that place and the other store which has been in business for
+                over 500 years in Wonderland, California. Our Homestore carries artist-made and high-design work from
+                all
+                around the world, including items from Ebay and Etsy.</p>
+            <a href="#" data-toggle="modal" data-target="#Complaint">Still want to talk to a mananger?</a>
+        </div>
+
+        <div class="item2">
+            <img src='https://cdn.shopify.com/s/files/1/0781/0385/files/LoungeSeaside-57_1024x1024.jpg?v=1592456205'>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="SignUp" tabindex="-1" aria-labelledby="SignUpLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="SignUpLabel">Register Today - Get Updates and Good Deals!</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">First and last name</span>
+                        </div>
+                        <input type="text" aria-label="First name" class="form-control">
+                        <input type="text" aria-label="Last name" class="form-control">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Email</span>
+                        </div>
+                        <input type="text" aria-label="Email" class="form-control">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Password</span>
+                        </div>
+                        <input type="password" aria-label="Password" class="form-control">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Re-Enter Password</span>
+                        </div>
+                        <input type="text" aria-label="Password" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="Complaint" tabindex="-1" aria-labelledby="ComplaintLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="ComplaintLabel">How can we help you?</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">First and last name</span>
+                        </div>
+                        <input type="text" aria-label="First name" class="form-control">
+                        <input type="text" aria-label="Last name" class="form-control">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Email</span>
+                        </div>
+                        <input type="text" aria-label="Email" class="form-control">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Subject</span>
+                        </div>
+                        <select class="form-control">
+                            <option>Book a Demo</option>
+                            <option>Get Inspired</option>
+                            <option>Question about a product</option>
+                            <option>Give a testimonial</option>
+                            <option>Become a Partner</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Message</span>
+                        </div>
+                        <textarea class="form-control" aria-label="Message"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script>
+        let items = [
+            {
+                "name": "Computer Desk <b>(Xtreme Gamer Edition)</b>",
+                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "sale": true,
+                "review": 3,
+                "price": 119.99,
+                "sale_price": 119.95,
+                "producer": "Deepali Kamatkar",
+            },
+            {
+                "name": "Boeing 737 (RC)",
+                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "sale": false,
+                "review": 4,
+                "price": '1,199.99',
+                "sale_price": "",
+                "producer": "Netika Ramsey",
+            },
+            {
+                "name": "Gold Plated Table",
+                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "sale": false,
+                "review": 5,
+                "price": '27,999.99',
+                "sale_price": "",
+                "producer": "David Russ",
+            },
+            {
+                "name": "Kyle's Tiny Picture",
+                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "sale": true,
+                "review": 1,
+                "price": 19.99,
+                "sale_price": "5.0 Shipping, otherwise <u>Free</u>",
+                "producer": "Kyle Woody",
+                
+            },
+            {
+                "name": "Nice Chair",
+                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "sale": true,
+                "review": 3,
+                "price": 49.99,
+                "sale_price": 29.99,
+                "producer": "Drew Partin",
+            },
+            {
+                "name": "Sedia in Pizza",
+                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "sale": true,
+                "review": 2,
+                "price": 9.99,
+                "sale_price": 9.98,
+                "producer": "Peter Palacios",
+            },
+            {
+                "name": "Single Crayon<br><span class='text-warning'>(Orange Flavor)</span>",
+                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "sale": true,
+                "review": 1,
+                "price": 2.99,
+                "sale_price": 1.99,
+                "producer": "Andrew Wardrop",
+            },
+            {
+                "name": "Bitcoin Spoon",
+                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "sale": false,
+                "review": 5,
+                "price": '42,000.01',
+                "sale_price": "",
+                "producer": "Dwight ",
+            },
+        ];
+
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const _id = (name) => document.getElementById(name);
+            const DisplayGallery = () => {
+                tmp = '';
+
+                for (let i = 0; i < items.length; i++) {
+                    tmp += `<div class="col mb-5"><div class="card h-100">`;
+
+                    if (items[i].sale)
+                        tmp += `<div class="badge bg-dark text-white position-absolute on-sale">Sale</div>`;
+
+                    review = `<div class="d-flex justify-content-center small text-warning mb-2">`;
+                    for (let j = 0; j < 5; j++) {
+
+                        review += (j < items[i].review) ? `<div class="bi-star-fill"></div>` : `<div class="bi-star"></div>`;
+                    }
+                    review += `</div>`;
+
+                    tmp += `<img class="card-img-top" src="${items[i].img}">
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder">${items[i].name}</h5>
+                                    by: <i>${items[i].producer}</i>
+                                    ${review}
+
+                                    <h5>${(items[i].sale ? `<span class="text-muted text-decoration-line-through">$${items[i].price}</span>` : '')}
+                                    $${(!items[i].sale ? `${items[i].price}` : `${items[i].sale_price}`)}</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto click" href="javascript:this" onclick="this.innerText='Added'">Add to cart</a></div>
+                            </div>
+                        </div>
+                    </div>`
+                }
+
+                _id("Gallery").innerHTML = tmp;
+            }
+
+            DisplayGallery();
+        })
+    </script>
+</body>
+
+</html>
