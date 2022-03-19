@@ -110,6 +110,12 @@
             text-decoration: line-through;
             color: red !important;
         }
+
+        .card-img-top {
+            width: 100%;
+            height: 12vw;
+            object-fit: cover;
+        }
     </style>
 </head>
 
@@ -352,8 +358,8 @@
     <script>
         let items = [
             {
-                "name": "Computer Desk <b>(Xtreme Gamer Edition)</b>",
-                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "name": "Computer Desk \"<b>Xtreme Gamer Edition</b>\"",
+                "img": "https://www.worthingtondirect.com/media/catalog/product/7/0/70240_1.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:",
                 "sale": true,
                 "review": 3,
                 "price": 119.99,
@@ -361,8 +367,17 @@
                 "producer": "Deepali Kamatkar",
             },
             {
-                "name": "Boeing 737 (RC)",
-                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "name": "CDM Mom",
+                "img": "https://victorygirlsblog.com/wp-content/uploads/2017/05/Military-Mom-5.jpg",
+                "sale": false,
+                "review": 5,
+                "price": '0.0 - <b>Priceless</b>',
+                "sale_price": "",
+                "producer": "Kathie Smith",
+            },
+            {
+                "name": "Boeing 737's Black Box",
+                "img": "https://static.toiimg.com/thumb/msid-77434085,width-1200,height-900,resizemode-4/.jpg",
                 "sale": false,
                 "review": 4,
                 "price": '1,199.99',
@@ -371,7 +386,7 @@
             },
             {
                 "name": "Gold Plated Table<br><i>ideal for any \"<b>Situation</b>\"</i>",
-                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "img": "https://img1.homary.com/filters:format(webp)/mall/file/2021/09/13/a32903cef02444c8afb2537a0f7adba6.jpg",
                 "sale": false,
                 "review": 5,
                 "price": '27,999.99',
@@ -379,8 +394,8 @@
                 "producer": "David Russ",
             },
             {
-                "name": "Kyle's Tiny Picture",
-                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "name": "Kyle's Tiny Pictures",
+                "img": "https://www.socialprintstudio.com/img/products/tinybooks/slider/tiny-book-2.jpg",
                 "sale": true,
                 "review": 1,
                 "price": 19.99,
@@ -389,8 +404,8 @@
 
             },
             {
-                "name": "Nice Chair",
-                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "name": "Galactic Chair | EVE Universe",
+                "img": "https://i.ytimg.com/vi/4nkdl1iqKQA/maxresdefault.jpg",
                 "sale": true,
                 "review": 3,
                 "price": 49.99,
@@ -399,7 +414,7 @@
             },
             {
                 "name": "Sedia in Pizza",
-                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "img": "https://b3h2.scene7.com/is/image/BedBathandBeyond/298792366799351p",
                 "sale": true,
                 "review": 2,
                 "price": 9.99,
@@ -408,7 +423,7 @@
             },
             {
                 "name": "Single Crayon<br><span class='text-warning'>(Orange Flavor)</span>",
-                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "img": "https://www.minimus.biz/Images/G05-0551401-8110bg.jpg",
                 "sale": true,
                 "review": 1,
                 "price": 2.99,
@@ -417,7 +432,7 @@
             },
             {
                 "name": "Bitcoin Spoon",
-                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "img": "http://cdn.shopify.com/s/files/1/0501/3199/2762/products/image_3d388575-8b1b-439d-81ea-1ccea9e93bbe.jpg?v=1641803283",
                 "sale": false,
                 "review": 5,
                 "price": '1 Bitcoin',
@@ -426,7 +441,7 @@
             },
             {
                 "name": "DA Form 4187",
-                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "img": "https://data.templateroller.com/pdf_docs_html/1795/17959/1795961/da-form-4187-personnel-action_print_big.png",
                 "sale": false,
                 "review": 5,
                 "price": '1.99',
@@ -434,8 +449,8 @@
                 "producer": "Yang Zhang",
             },
             {
-                "name": "Army Uniform",
-                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "name": "Army Uniform | Many Patterns to Choose From",
+                "img": "https://ae01.alicdn.com/kf/H0620a254a8b9479d8967873d6d58c9850/13-Color-Army-Military-Tactical-Uniform-Shirt-Pants-Camo-Camouflage-Combat-Uniform-US-Army-Men-s.jpg_Q90.jpg_.webp",
                 "sale": false,
                 "review": 2,
                 "price": '99.94',
@@ -443,17 +458,17 @@
                 "producer": "Yang Yu",
             },
             {
-                "name": "Stuff Animal",
-                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "name": "Explicit Rap Album<br><i>Limited Edition</i>",
+                "img": "https://media.npr.org/assets/img/2010/10/29/parental-advisory_wide-1aa5c9539fe4e7f1ad184c7d75ab33f1c07c0038.jpg?s=1400",
                 "sale": false,
-                "review": 4,
-                "price": '39.99',
+                "review": 5,
+                "price": '99.99',
                 "sale_price": "",
                 "producer": "Jay Trotter",
             },
             {
                 "name": "Walrus Mustache",
-                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "img": "https://cdn.shoplightspeed.com/shops/622314/files/14330404/670x670x1/the-walrus-mustache-white-grey.jpg",
                 "sale": false,
                 "review": 3,
                 "price": '10.99',
@@ -462,7 +477,7 @@
             },
             {
                 "name": "Maine's Lobster",
-                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "img": "https://www.crawfishhaven.net/wp-content/uploads/brizy/imgs/vty2bpdnys0byuam7azm-1-906x566x0x55x906x455x1606344612.jpeg",
                 "sale": false,
                 "review": 4,
                 "price": '126.43',
@@ -470,8 +485,8 @@
                 "producer": "Parker Gibson",
             },
             {
-                "name": "Your Privacy Data",
-                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "name": "Your Personal Data",
+                "img": "https://www.passcamp.com/wp-content/uploads/2021/04/How-to-Protect-your-Personal-Information-Online-illustration-2-1024x573.jpg",
                 "sale": true,
                 "review": 3,
                 "price": '999,999.99',
@@ -480,13 +495,13 @@
             },
             {
                 "name": "Nike Air Yeezy 2",
-                "img": "https://dummyimage.com/450x300/dee2e6/6c757d.jpg",
+                "img": "https://images.stockx.com/images/Nike-Air-Yeezy-2-Red-October-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&q=90&dpr=2&trim=color&updated_at=1606315975",
                 "sale": false,
                 "review": 5,
                 "price": '49,972.00',
                 "sale_price": "",
                 "producer": "Christian Madrigal",
-            },
+            }
         ];
 
         window.addEventListener('DOMContentLoaded', (event) => {
