@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Tai Huynh</title>
     <style>
         @import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css");
@@ -113,7 +112,7 @@
 
         .card-img-top {
             width: 100%;
-            height: 12vw;
+            height: 20vh;
             object-fit: cover;
         }
     </style>
@@ -170,7 +169,7 @@
         </div>
     </nav>
 
-    <!--BANNER-->
+    <!--Banner-->
     <div class="banner">
         <p>Choose your <span>own style</span> that fit you</p>
     </div>
@@ -189,6 +188,7 @@
             <h1>About us</h1>
             <br>
             <img src="stuff/logo.png" class="img-fluid" style="max-width: 200px;">
+            <h3 class="text-primary">PCAD5: <b class="text-danger">2B || !2B</b></h3>
             <p>
                 We started as Microsoft Software and Systems Academy students in 2022, unable to pay rent, and are now selling furniture and homewares online because, as Veterans and technology enthusiasts, competing for Software Engineering positions is exceedingly difficult, and we struggled to find affordable and locally accessible furniture and homewares that truly reflected our own style and character.
             </p>
@@ -232,8 +232,8 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">First and last name</span>
                         </div>
-                        <input type="text" aria-label="First name" class="form-control">
-                        <input type="text" aria-label="Last name" class="form-control">
+                        <input type="text" placeholder="First" aria-label="First name" class="form-control">
+                        <input type="text" placeholder="Last" aria-label="Last name" class="form-control">
                     </div>
 
                     <div class="input-group mb-3">
@@ -261,35 +261,35 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Social Security Number</span>
                         </div>
-                        <input type="text" aria-label="SSN" class="form-control">
+                        <input type="text" placeholder="000-00-0000" aria-label="SSN" class="form-control">
                     </div>
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Date of Birth</span>
                         </div>
-                        <input type="text" aria-label="DOB" class="form-control">
+                        <input type="date" placeholder="MM-DD-YYYY" aria-label="DOB" class="form-control">
                     </div>
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Billing Address</span>
                         </div>
-                        <input type="text" aria-label="address1" class="form-control">
+                        <input type="text" placeholder="123 Road Dr" aria-label="address1" class="form-control">
                     </div>
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">City</span>
                         </div>
-                        <input type="text" aria-label="City" class="form-control">
+                        <input type="text" placeholder="Wonderland" aria-label="City" class="form-control">
                     </div>
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Zip Code</span>
                         </div>
-                        <input type="text" aria-label="Email" class="form-control">
+                        <input type="text" placeholder="00000" aria-label="Email" class="form-control">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -353,12 +353,29 @@
         </div>
     </div>
 
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" data-dismiss="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="imgPreviewLabel">Content</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    By: <i id="imgPreviewItemBy"></i><br><br>
+                    <div id="imgPreviewContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script>
         let items = [
             {
-                "name": "Computer Desk \"<b>Xtreme Gamer Edition</b>\"",
+                "name": "Computer Desk<br>\"<b>Xtreme Gamer Edition</b>\"",
                 "img": "https://www.worthingtondirect.com/media/catalog/product/7/0/70240_1.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:",
                 "sale": true,
                 "review": 3,
@@ -406,6 +423,7 @@
             {
                 "name": "Galactic Chair | EVE Universe",
                 "img": "https://i.ytimg.com/vi/4nkdl1iqKQA/maxresdefault.jpg",
+                "video": "4nkdl1iqKQA",
                 "sale": true,
                 "review": 3,
                 "price": 49.99,
@@ -422,7 +440,7 @@
                 "producer": "Peter Palacios",
             },
             {
-                "name": "Single Crayon<br><span class='text-warning'>(Orange Flavor)</span>",
+                "name": `Single Crayon<br><span class="text-warning">(Orange Flavor)</span>`,
                 "img": "https://www.minimus.biz/Images/G05-0551401-8110bg.jpg",
                 "sale": true,
                 "review": 1,
@@ -524,11 +542,12 @@
                     }
                     review += `</div>`;
 
-                    tmp += `<img class="card-img-top" src="${items[i].img}">
+                    tmp += `<img class="card-img-top pop" src="${items[i].img}" data-name='${items[i].name}' data-author='${items[i].producer}' data-video="${items[i].video}">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder">${items[i].name}</h5>
-                                    by: <i>${items[i].producer}</i>
+                                    By: <i>${items[i].producer}</i>
+                                
                                     ${review}
 
                                     <h5>${(items[i].sale ? `<span class="text-muted text-decoration-line-through">$${items[i].price}</span>` : '')}
@@ -559,6 +578,21 @@
             }
 
             DisplayGallery();
+
+            $('.pop').on('click', function () {
+                if ($(this).data('video') != "undefined")
+                    $('#imgPreviewContent').html(`<iframe width="100%" height="450" src="https://www.youtube-nocookie.com/embed/${$(this).data('video')}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`);
+                else
+                    $('#imgPreviewContent').html(`<img id="imgPreview" src="${$(this).attr('src')}" style="width: 100%;">`);
+                $('#imgPreviewLabel').html($(this).data('name'));
+                $('#imgPreviewItemBy').text($(this).data('author'));
+                $('#imageModal').modal('show');
+            });
+
+            $('#imageModal').on('hidden.bs.modal', function () {
+                $('#imgPreviewContent').html('');
+            });
+            
         })
     </script>
 </body>
