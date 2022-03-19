@@ -80,17 +80,15 @@
             width: 100%;
         }
 
-        .row {
-            display: flex;
-            flex-direction: row;
-        }
+        @media (min-width: 1200px) {
+            .row {
+                display: flex !important;
+                flex-direction: row !important;
+            }
 
-        .item1 {
-            flex-basis: 50%;
-        }
-
-        .item2 {
-            flex-basis: 50%;
+            .col-split {
+                flex-basis: 50% !important;
+            }
         }
 
         .content {
@@ -131,7 +129,7 @@
             5. Gallery page to display products ( paintings, frames) with description and price.
     -->
     <!--MENU-->
-    <nav id="menu" class="navbar navbar-expand-lg bg-secondary">
+    <nav id="menu" class="navbar navbar-dark navbar-expand-lg bg-secondary">
         <div class="container">
             <a href="/" class="navbar-brand">
                 <img class="navbar-logo" src="stuff/logo.png">
@@ -174,20 +172,21 @@
         <p>Choose your <span>own style</span> that fit you</p>
     </div>
 
-    <div class="container px-4 px-lg-5 mt-5">
-        <div id="Gallery" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+    <!--Gallery Store-->
+    <div class="container mt-5">
+        <div id="Gallery" class="row row-cols-1 row-cols-md-3 row-cols-xl-4 justify-content-center">
         </div>
     </div>
 
     <!--Main-->
     <div id="About" class="row">
-        <div class="item1">
+        <div class="col-split">
             <img src='https://cdn.shopify.com/s/files/1/0781/0385/files/LoungeRoadside-12_1024x1024.jpg'>
         </div>
-        <div class="item2 content">
+        <div class="col-split content">
             <h1>About us</h1>
             <br>
-            <img src="stuff/logo.png" class="img-fluid" style="max-width: 200px;">
+            <img src="stuff/logo.png" class="img-fluid" style="max-width: 70px;">
             <h3 class="text-primary">PCAD5: <b class="text-danger">2B || !2B</b></h3>
             <p>
                 We started as Microsoft Software and Systems Academy students in 2022, unable to pay rent, and are now selling furniture and homewares online because, as Veterans and technology enthusiasts, competing for Software Engineering positions is exceedingly difficult, and we struggled to find affordable and locally accessible furniture and homewares that truly reflected our own style and character.
@@ -197,14 +196,18 @@
     </div>
 
     <div id="Contact" class="row">
-        <div class="item1 content">
+        <div class="col-split d-xl-none d-ms-block">
+            <img src='https://cdn.shopify.com/s/files/1/0781/0385/files/LoungeSeaside-57_1024x1024.jpg'>
+        </div>
+
+        <div class="col-split content">
             <h1>Contact Us</h1>
             <br>
             <p>The Smarkan Homestore is adjacent to that place and the other store which has been in business for over 500 years in Wonderland, California. Our Homestore carries artist-made and high-design work from all around the world, including items from Ebay and Etsy.</p>
             <a href="#" data-toggle="modal" data-target="#Complaint">Still want to talk to a manager?</a>
         </div>
 
-        <div class="item2">
+        <div class="col-split d-none d-xl-block">
             <img src='https://cdn.shopify.com/s/files/1/0781/0385/files/LoungeSeaside-57_1024x1024.jpg'>
         </div>
     </div>
@@ -583,7 +586,7 @@
                 if ($(this).data('video') != "undefined")
                     $('#imgPreviewContent').html(`<iframe width="100%" height="450" src="https://www.youtube-nocookie.com/embed/${$(this).data('video')}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`);
                 else
-                    $('#imgPreviewContent').html(`<img id="imgPreview" src="${$(this).attr('src')}" style="width: 100%;">`);
+                    $('#imgPreviewContent').html(`<img id="imgPreview" src="${$(this).attr('src')}" style="width: 100%; border-radius: 5px">`);
                 $('#imgPreviewLabel').html($(this).data('name'));
                 $('#imgPreviewItemBy').text($(this).data('author'));
                 $('#imageModal').modal('show');
@@ -592,7 +595,7 @@
             $('#imageModal').on('hidden.bs.modal', function () {
                 $('#imgPreviewContent').html('');
             });
-            
+
         })
     </script>
 </body>
